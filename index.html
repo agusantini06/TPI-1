@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>La vida y carrera de Elon Musk — Proyecto</title>
+  <meta name="description" content="Proyecto de Programación II: la vida y carrera de Elon Musk contada de manera simple y directa.">
+
+  <style>
+    :root{
+      --bg: #0f1724;
+      --card: #0b1220;
+      --text: #e6eef8;
+      --muted: #9fb0c8;
+      --accent: #00a3ff;
+      --radius: 12px;
+      --max-width: 1200px;
+    }
+    :root[data-theme='light']{
+      --bg: #f6fbff;
+      --card: #ffffff;
+      --text: #0b1220;
+      --muted: #4b647a;
+      --accent: #0066cc;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--text);}
+    .container{width:90%;max-width:var(--max-width);margin:0 auto}
+    header{backdrop-filter: blur(6px);position:sticky;top:0;z-index:40}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{font-weight:700;text-decoration:none;color:var(--text);font-size:1.05rem}
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:18px;align-items:center}
+    nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,0.03)}
+    .nav-toggle{display:none;background:none;border:0;font-size:1.3rem;color:var(--text);cursor:pointer}
+    .dark-toggle{background:none;border:0;font-size:1.2rem;color:var(--text);cursor:pointer;margin-right:8px}
+
+    .hero{display:grid;grid-template-columns:1fr 480px;gap:32px;align-items:center;padding:48px 0}
+    .hero .intro h1{font-size:2rem;margin:0 0 12px}
+    .hero .intro p{color:var(--muted);line-height:1.6}
+    .hero .cta{margin-top:18px;display:flex;gap:12px}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn-primary{background:linear-gradient(90deg,var(--accent),#00d1ff);color:white}
+    .btn-outline{border:1px solid rgba(255,255,255,0.06);color:var(--text);background:transparent}
+    .hero .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:18px;border-radius:16px}
+    .hero img{width:100%;height:auto;border-radius:10px;display:block}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:28px}
+    .card-small{background:var(--card);padding:12px;border-radius:12px}
+    .card-small h3{margin:0 0 8px;font-size:1rem}
+    .card-small p{margin:0;color:var(--muted);font-size:0.9rem}
+    .quote-section{margin:48px 0;padding:28px;background:var(--card);border-radius:16px;text-align:center}
+    .quote-section blockquote{font-size:1.3rem;font-style:italic;margin:0;color:var(--accent)}
+    .quote-section .quote-author{margin-top:8px;color:var(--muted);font-weight:600}
+    footer{padding:28px 0;color:var(--muted);font-size:0.9rem}
+    @media (max-width:1200px){.hero{grid-template-columns:1fr 400px}}
+    @media (max-width:992px){.hero{grid-template-columns:1fr 360px}.cards{grid-template-columns:repeat(2,1fr)}}
+    @media (max-width:768px){
+      .nav-toggle{display:inline-block}
+      nav{position:absolute;right:18px;top:64px;background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,0.6);display:none}
+      nav.open{display:block}
+      nav ul{flex-direction:column;gap:8px}
+      .hero{grid-template-columns:1fr;padding:28px 0}
+      .hero .card{order:2}
+    }
+    @media (max-width:480px){.hero .intro h1{font-size:1.5rem}.cards{grid-template-columns:1fr}}
+    .reveal{opacity:0;transform:translateY(16px);transition:all .6s cubic-bezier(.2,.9,.2,1)}
+    .in-view{opacity:1;transform:none}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="index.html">Proyecto: Elon Musk</a>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button class="dark-toggle" id="themeToggle" title="Alternar tema">🌓</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+      </div>
+      <nav id="mainNav" aria-label="Navegación principal">
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="pages/logros1.html">Primeros Logros</a></li>
+          <li><a href="pages/logros2.html">Tesla</a></li>
+          <li><a href="pages/logros3.html">SpaceX</a></li>
+          <li><a href="pages/logros4.html">Otros Proyectos</a></li>
+          <li><a href="pages/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <div class="intro">
+        <h1 class="reveal">Elon Musk</h1>
+        <p class="reveal">Bienvenidos a nuestra web sobre Elon Musk. Acá vamos a contar de manera directa y sin vueltas cómo pasó de sus primeras empresas a liderar Tesla y SpaceX, además de otros proyectos locos que se le ocurrieron en el camino.</p>
+        <div class="cta reveal">
+          <a class="btn btn-primary" href="pages/logros1.html">Arranquemos con los primeros logros</a>
+          <a class="btn btn-outline" href="pages/logros3.html">Saltemos directo a SpaceX</a>
+        </div>
+        <div class="cards reveal" style="margin-top:18px">
+          <div class="card-small">
+            <h3>Zip2 · PayPal</h3>
+            <p>Sus primeras aventuras en el mundo tech.</p>
+          </div>
+          <div class="card-small">
+            <h3>Tesla</h3>
+            <p>Autos eléctricos, energía y futuro verde.</p>
+          </div>
+          <div class="card-small">
+            <h3>SpaceX</h3>
+            <p>Cohetes reutilizables y planes de ir a Marte.</p>
+          </div>
+        </div>
+      </div>
+      <aside class="card reveal">
+        <img src="assets/images/Elon_Musk.png" alt="Elon Musk mirando al futuro">
+      </aside>
+    </section>
+
+    <section class="quote-section reveal">
+      <blockquote>“Cuando algo es lo suficientemente importante, lo hacés incluso si las probabilidades están en tu contra.”</blockquote>
+      <p class="quote-author">– Elon Musk</p>
+    </section>
+  </main>
+
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
+      <div>&copy; 2025 — Proyecto Programación II</div>
+      <div>Integrantes: Augusto Santini · Camilo Dominguez · Benicio Florian</div>
+    </div>
+  </footer>
+
+  <script>
+    // Menú hamburguesa
+    const nav = document.getElementById('mainNav');
+    const navToggle = document.getElementById('navToggle');
+    navToggle.addEventListener('click', () => nav.classList.toggle('open'));
+
+    // Tema oscuro/claro
+    const themeToggle = document.getElementById('themeToggle');
+    const root = document.documentElement;
+    const saved = localStorage.getItem('site-theme');
+    if(saved){ root.setAttribute('data-theme', saved); }
+    themeToggle.addEventListener('click', () => {
+      const current = root.getAttribute('data-theme');
+      const next = (current === 'light') ? '' : 'light';
+      if(next) root.setAttribute('data-theme', next);
+      else root.removeAttribute('data-theme');
+      localStorage.setItem('site-theme', next);
+    });
+
+    // Animación de scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.classList.add('in-view');
+      });
+    }, { threshold: 0.15 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
