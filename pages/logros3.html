@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpaceX - Proyecto Elon Musk</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--text:#e6eef8;--muted:#9fb0c8;--accent:#00a3ff;--radius:12px;--max-width:1200px}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,Arial;background:var(--bg);color:var(--text);}
+    .container{width:90%;max-width:var(--max-width);margin:0 auto}
+    header{backdrop-filter:blur(6px);position:sticky;top:0;z-index:40}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{font-weight:700;text-decoration:none;color:var(--text);font-size:1.05rem}
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:18px;align-items:center}
+    nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,0.1)}
+    main{padding:48px 0}
+    h1{font-size:2.2rem;margin-bottom:24px;text-align:center}
+    h2{color:var(--accent)}
+    .card{background:var(--card);padding:20px;border-radius:16px;margin-bottom:36px;box-shadow:0 4px 12px rgba(0,0,0,0.3)}
+    .info-img{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+    .info-img img{width:45%;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+    .info-img .text{flex:1}
+    iframe{width:100%;max-width:560px;height:315px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.4)}
+    footer{padding:28px 0;color:var(--muted);font-size:0.9rem;text-align:center}
+    .integrantes{margin-top:8px;font-size:0.85rem}
+    .next-link{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;
+               padding:12px 20px;border-radius:12px;margin-top:20px;font-weight:600}
+    .next-link:hover{opacity:0.9}
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">Proyecto: Elon Musk</a>
+      <nav>
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="logros1.html">Primeros Logros</a></li>
+          <li><a href="logros2.html">Tesla</a></li>
+          <li><a href="logros3.html">SpaceX</a></li>
+          <li><a href="logros4.html">Otros Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1>SpaceX 🚀</h1>
+
+    <div class="card">
+  <div class="info-img">
+    <div class="text">
+      <h2>Primeros lanzamientos</h2>
+      <p>En 2008 SpaceX logró el primer cohete privado en llegar a órbita: el Falcon 1. 
+         Este fue un punto clave para que la NASA confiara en ellos.</p>
+    </div>
+    <img src="../assets/images/falcon_1.png" alt="falcon 1">
+
+  </div>
+</div>
+
+<div class="card">
+  <div class="info-img">
+    <img src="../assets/images/falcon_9.png" alt="falcon 9">
+    <div class="text">
+      <h2>El Falcon 9</h2>
+      <p>El Falcon 9 se convirtió en el caballo de batalla de SpaceX, 
+         con cohetes reutilizables que reducen los costos de acceso al espacio.</p>
+    </div>
+  </div>
+</div>
+
+<div class="card">
+  <div class="info-img">
+    <div class="text">
+      <h2>Starship</h2>
+      <p>El proyecto más ambicioso de Musk: una nave espacial gigante, pensada para llegar 
+         a Marte y colonizar otros planetas.</p>
+    </div>
+    <img src="../assets/images/starship.png" alt="starship">
+  </div>
+</div>
+
+
+    <div class="card" style="text-align:center">
+      <h2>Video destacado</h2>
+      <iframe src="https://www.youtube.com/embed/zqE-ultsWt0" 
+              title="SpaceX video" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <a href="logros4.html" class="next-link">➡ Otros Proyectos</a>
+  </main>
+
+  <footer>
+    &copy; 2025 — Proyecto Programación II  
+    <div class="integrantes">Integrantes: Augusto Santini · Camilo Dominguez · Benicio Florian</div>
+  </footer>
+
+</body>
+</html>
