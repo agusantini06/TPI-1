@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Otros Proyectos de Elon Musk</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--text:#e6eef8;--muted:#9fb0c8;--accent:#00a3ff;--radius:12px;--max-width:1200px}
+    :root[data-theme='light']{--bg:#f6fbff;--card:#ffffff;--text:#0b1220;--muted:#4b647a;--accent:#0066cc}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui,-apple-system,'Segoe UI',Roboto,Arial;background:var(--bg);color:var(--text);}
+    .container{width:90%;max-width:var(--max-width);margin:0 auto}
+    header{backdrop-filter:blur(6px);position:sticky;top:0;z-index:40}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{font-weight:700;text-decoration:none;color:var(--text);font-size:1.05rem}
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:18px;align-items:center}
+    nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,0.03)}
+    .nav-toggle{display:none;background:none;border:0;font-size:1.3rem;color:var(--text);cursor:pointer}
+    .dark-toggle{background:none;border:0;font-size:1.2rem;color:var(--text);cursor:pointer;margin-right:8px}
+    footer{padding:28px 0;color:var(--muted);font-size:0.9rem;text-align:center}
+    @media(max-width:768px){
+      .nav-toggle{display:inline-block}
+      nav{position:absolute;right:18px;top:64px;background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,.6);display:none}
+      nav.open{display:block}
+      nav ul{flex-direction:column;gap:8px}
+    }
+
+    /* --- Contenedor texto + imagen (general) --- */
+    .neuralink-contenido, .boring-contenido, .starlink-contenido {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      margin-top: 40px;
+    }
+
+    .neuralink-texto-container, .boring-texto-container, .starlink-texto-container {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: left;
+    }
+
+    .neuralink-subtitulo, .boring-subtitulo, .starlink-subtitulo {
+      font-weight: bold;
+      color: var(--accent);
+      font-size: 1.2rem;
+    }
+
+    .neuralink-texto, .boring-texto, .starlink-texto {
+      line-height: 1.6;
+    }
+
+    .neuralink-img, .boring-img, .starlink-img {
+      width: 300px;
+      height: auto;
+      position: relative;
+      animation: mover 4s infinite alternate ease-in-out;
+    }
+
+    @keyframes mover {
+      from { left: 0px; }
+      to { left: 50px; }
+    }
+
+    @media(max-width:768px){
+      .neuralink-contenido, .boring-contenido, .starlink-contenido {
+        flex-direction: column;
+        align-items: center;
+      }
+      .neuralink-img, .boring-img, .starlink-img {
+        margin-top: 20px;
+        animation: none;
+      }
+      .neuralink-texto-container, .boring-texto-container, .starlink-texto-container {
+        align-items: center;
+        text-align: center;
+      }
+    }
+
+    /* --- Fade-in al cargar la página --- */
+    body {
+      opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    body.loaded {
+      opacity: 1;
+    }
+
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a class="logo" href="../index.html">Proyecto: Elon Musk</a>
+      <div style="display:flex;align-items:center;gap:8px">
+        <button class="dark-toggle" id="themeToggle" title="Alternar tema">🌓</button>
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+      </div>
+      <nav id="mainNav">
+        <ul>
+          <li><a href="../index.html">Inicio</a></li>
+          <li><a href="logros1.html">Primeros Logros</a></li>
+          <li><a href="logros2.html">Tesla</a></li>
+          <li><a href="logros3.html">SpaceX</a></li>
+          <li><a href="logros4.html">Otros Proyectos</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <h1 style="text-align: center; margin-bottom: 40px;">Otros proyectos de Elon Musk</h1>
+      <p style="text-align: center; max-width: 600px; margin: 0 auto; line-height: 1.4;">
+      Elon Musk también ha impulsado innovaciones en distintos campos tecnológicos. A través de <strong>Neuralink</strong>, busca desarrollar interfaces cerebro-computadora que permitan una comunicación directa entre humanos y máquinas. Además, con <strong>The Boring Company</strong> trabaja en la construcción de túneles subterráneos para mejorar la movilidad urbana y reducir la congestión del tráfico en las ciudades. Musk también ha explorado proyectos relacionados con la energía renovable y el internet satelital global mediante <strong>Starlink</strong>, ofreciendo conectividad a zonas remotas del planeta.
+    </p>
+
+    <!-- SECCIÓN NEURALINK -->
+    <div class="neuralink-contenido">
+      <div class="neuralink-texto-container">
+        <span class="neuralink-subtitulo">NEURALINK</span>
+        <p class="neuralink-texto">
+          <strong>Neuralink</strong>, fundada por Elon Musk en 2016, es una empresa de neurotecnología que desarrolla interfaces cerebro-computadora. 
+          Su objetivo principal es crear implantes que permitan la comunicación directa entre el cerebro humano y dispositivos electrónicos, 
+          lo que abriría la posibilidad de tratar enfermedades neurológicas, recuperar funciones motoras en personas con parálisis 
+          e incluso mejorar la capacidad cognitiva. A largo plazo, Musk plantea que esta tecnología podría servir para una integración 
+          más profunda entre humanos e inteligencia artificial.
+        </p>
+      </div>
+      <img src="../assets/images/Neuralink.png" alt="Neuralink" class="neuralink-img">
+    </div>
+
+    <!-- SECCIÓN THE BORING COMPANY -->
+    <div class="boring-contenido">
+      <div class="boring-texto-container">
+        <span class="boring-subtitulo">THE BORING COMPANY</span>
+        <p class="boring-texto">
+          <strong>The Boring Company</strong>, también fundada por Elon Musk, se dedica a desarrollar túneles subterráneos para mejorar la movilidad urbana y reducir la congestión del tráfico. 
+          Su objetivo es crear sistemas de transporte más rápidos y eficientes en ciudades densamente pobladas, utilizando vehículos eléctricos autónomos en túneles de alta velocidad. 
+          La empresa ha trabajado en proyectos piloto en Estados Unidos y busca expandir la tecnología a nivel global, ofreciendo una alternativa innovadora al transporte tradicional.
+        </p>
+      </div>
+      <img src="../assets/images/boring.png" alt="The Boring Company" class="boring-img">
+    </div>
+
+    <!-- SECCIÓN STARLINK -->
+    <div class="starlink-contenido">
+      <div class="starlink-texto-container">
+        <span class="starlink-subtitulo">STARLINK</span>
+        <p class="starlink-texto">
+          <strong>Starlink</strong> es un proyecto de SpaceX impulsado por Elon Musk que busca crear una red global de internet satelital. 
+          Para ello, se están desplegando miles de satélites en órbita baja de la Tierra, los cuales ofrecen conectividad rápida y de baja latencia incluso en zonas rurales o remotas donde la infraestructura tradicional no llega. 
+          El objetivo principal es democratizar el acceso a internet, reducir la brecha digital y brindar un servicio confiable en todo el mundo, desde ciudades densamente pobladas hasta regiones aisladas.
+        </p>
+      </div>
+      <img src="../assets/images/starlink.png" alt="Starlink" class="starlink-img">
+    </div>
+
+    <!-- SECCIÓN VIDEOS EXPLICATIVOS -->
+<div class="videos-explicativos" style="margin-top:60px; text-align:center;">
+  <h2 style="color:var(--accent); margin-bottom:20px;">Videos Explicativos</h2>
+
+  <!-- Neuralink -->
+  <div style="margin-bottom:20px;">
+    <h3 style="color:var(--accent); margin-bottom:5px;">Neuralink</h3>
+    <a href="https://www.youtube.com/watch?v=xLfBAy826BA" target="_blank" style="color:var(--text); text-decoration:underline;">
+      Ver video sobre Neuralink
+    </a>
+  </div>
+
+  <!-- The Boring Company -->
+  <div style="margin-bottom:20px;">
+    <h3 style="color:var(--accent); margin-bottom:5px;">The Boring Company</h3>
+    <a href="https://www.youtube.com/watch?v=EKLm3J9A-qw" target="_blank" style="color:var(--text); text-decoration:underline;">
+      Ver video sobre The Boring Company
+    </a>
+  </div>
+
+  <!-- Starlink -->
+  <div style="margin-bottom:20px;">
+    <h3 style="color:var(--accent); margin-bottom:5px;">Starlink</h3>
+    <a href="https://www.youtube.com/watch?v=qs2QcycggWU" target="_blank" style="color:var(--text); text-decoration:underline;">
+      Ver video sobre Starlink
+    </a>
+  </div>
+</div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 — Proyecto Programación II</p>
+    <p>Integrantes: Augusto Santini · Camilo Dominguez · Benicio Florian</p>
+  </footer>
+
+  <script>
+    // Menú hamburguesa
+    const nav=document.getElementById('mainNav');
+    const navToggle=document.getElementById('navToggle');
+    navToggle.addEventListener('click',()=>nav.classList.toggle('open'));
+
+    // Tema oscuro/claro
+    const themeToggle=document.getElementById('themeToggle');
+    const root=document.documentElement;
+    const saved=localStorage.getItem('site-theme');
+    if(saved){root.setAttribute('data-theme',saved);}
+    themeToggle.addEventListener('click',()=>{
+      const current=root.getAttribute('data-theme');
+      const next=(current==='light')?'':'light';
+      if(next) root.setAttribute('data-theme',next);
+      else root.removeAttribute('data-theme');
+      localStorage.setItem('site-theme',next);
+    });
+
+    // --- Fade-in al cargar la página ---
+    window.addEventListener('load', () => {
+      document.body.classList.add('loaded');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Primeros logros de Elon Musk</title>
+  <style>
+   /* Animación fade-in al cargar la página */
+body {
+  opacity: 0;              /* empieza invisible */
+  transition: opacity 0.5s ease-in-out;  /* duración y suavidad */
+}
+
+body.loaded {
+  opacity: 1;              /* se vuelve visible */
+}
+
+   :root{--bg:#0f1724;--card:#0b1220;--text:#e6eef8;--muted:#9fb0c8;--accent:#00a3ff;--radius:12px;--max-width:1200px}
+    :root[data-theme='light']{--bg:#f6fbff;--card:#ffffff;--text:#0b1220;--muted:#4b647a;--accent:#0066cc}
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0;font-family:Inter,system-ui;-apple-system,'Segoe UI',Roboto,Arial;background:var(--bg);color:var(--text);}
+    .container{width:90%;max-width:var(--max-width);margin:0 auto}
+    header{backdrop-filter:blur(6px);position:sticky;top:0;z-index:40}
+    .header-inner{display:flex;align-items:center;justify-content:space-between;padding:14px 0}
+    .logo{font-weight:700;text-decoration:none;color:var(--text);font-size:1.05rem}
+    nav ul{list-style:none;padding:0;margin:0;display:flex;gap:18px;align-items:center}
+    nav a{color:var(--text);text-decoration:none;padding:8px 10px;border-radius:8px}
+    nav a:hover{background:rgba(255,255,255,0.03)}
+    .nav-toggle{display:none;background:none;border:0;font-size:1.3rem;color:var(--text);cursor:pointer}
+    .dark-toggle{background:none;border:0;font-size:1.2rem;color:var(--text);cursor:pointer;margin-right:8px}
+    main{padding:48px 0}
+    h1{font-size:2rem;margin-bottom:18px}
+    .card{background:var(--card);padding:18px;border-radius:16px;margin-bottom:28px;display:flex;align-items:center;gap:16px;}
+    .card img{width:80px;height:auto;border-radius:8px;}
+    .btn{display:inline-block;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600;background:linear-gradient(90deg,var(--accent),#00d1ff);color:white;}
+    .btn:hover{opacity:0.9;}
+    footer{padding:28px 0;color:var(--muted);font-size:0.9rem;text-align:center}
+    @media(max-width:768px){.nav-toggle{display:inline-block}nav{position:absolute;right:18px;top:64px;background:var(--card);padding:12px;border-radius:12px;box-shadow:0 8px 24px rgba(2,6,23,.6);display:none}nav.open{display:block}nav ul{flex-direction:column;gap:8px}.card{flex-direction:column;align-items:flex-start;}}
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container header-inner">
+    <a class="logo" href="../index.html">Proyecto: Elon Musk</a>
+    <div style="display:flex;align-items:center;gap:8px">
+      <button class="dark-toggle" id="themeToggle" title="Alternar tema">🌓</button>
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">☰</button>
+    </div>
+    <nav id="mainNav">
+      <ul>
+        <li><a href="../index.html">Inicio</a></li>
+        <li><a href="logros1.html">Primeros Logros</a></li>
+        <li><a href="logros2.html">Tesla</a></li>
+        <li><a href="logros3.html">SpaceX</a></li>
+        <li><a href="logros4.html">Otros Proyectos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+  <h1>Primeros logros de Elon Musk</h1>
+
+  <div class="card">
+    <img src="../assets/images/Zip2.webp" alt="Logo Zip2">
+    <div>
+      <h2>Zip2 Corporation</h2>
+      <p>Su primera empresa, que proveía software para periódicos. Fue vendida y le permitió empezar a invertir en otros proyectos.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="../assets/images/X_PayPal.png" alt="Logo PayPal">
+    <div>
+      <h2>X.com / PayPal</h2>
+      <p>Fundó X.com que luego se convirtió en PayPal, revolucionando los pagos online.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:24px;">
+    <a href="logros2.html" class="btn">
+      🚀 Siguiente: Tesla
+    </a>
+  </div>
+</main>
+
+<footer class="container">
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+    <div>&copy; 2025 — Proyecto Programación II</div>
+    <div>Integrantes: Augusto Santini · Camilo Dominguez · Benicio Florian</div>
+  </div>
+</footer>
+
+<script>
+  const nav=document.getElementById('mainNav');
+  const navToggle=document.getElementById('navToggle');
+  navToggle.addEventListener('click',()=>nav.classList.toggle('open'));
+
+  const themeToggle=document.getElementById('themeToggle');
+  const root=document.documentElement;
+  const saved=localStorage.getItem('site-theme');
+  if(saved){root.setAttribute('data-theme',saved);}
+  themeToggle.addEventListener('click',()=>{
+    const current=root.getAttribute('data-theme');
+    const next=(current==='light')?'':'light';
+    if(next) root.setAttribute('data-theme',next);
+    else root.removeAttribute('data-theme');
+    localStorage.setItem('site-theme',next);
+  });
+
+</script>
+<script>
+  // Fade-in al cargar la página
+  window.addEventListener('DOMContentLoaded', () => {
+    document.body.classList.add('loaded');
+  });
+// Fade-out al hacer clic en links internos
+document.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', function(e){
+    const href = this.getAttribute('href');
+    // Saltamos links externos o anclas
+    if(href.startsWith('http') || href.startsWith('#')) return;
+
+    e.preventDefault();             // evitamos cambio instantáneo
+    document.body.style.opacity = '0'; // fade-out
+    setTimeout(() => {
+      window.location = href;       // cambiamos de página después del fade
+    }, 500);                         // mismo tiempo que el CSS
+  });
+});
+
+</script>
+
+</body>
+</html>
